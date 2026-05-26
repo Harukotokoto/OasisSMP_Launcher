@@ -55,7 +55,7 @@ function toggleLaunchArea(loading){
         launch_content.style.display = 'none'
     } else {
         launch_details.style.display = 'none'
-        launch_content.style.display = 'inline-flex'
+        launch_content.style.display = 'flex'
     }
 }
 
@@ -95,7 +95,8 @@ function setDownloadPercentage(percent){
  * @param {boolean} val True to enable, false to disable.
  */
 function setLaunchEnabled(val){
-    document.getElementById('launch_button').disabled = !val
+    const isLoggedIn = ConfigManager.getSelectedAccount() != null
+    document.getElementById('launch_button').disabled = !(val && isLoggedIn)
 }
 
 // Bind launch button
@@ -153,6 +154,7 @@ function updateSelectedAccount(authUser){
         }
     }
     user_text.innerHTML = username
+    setLaunchEnabled(ConfigManager.getSelectedServer() != null)
 }
 updateSelectedAccount(ConfigManager.getSelectedAccount())
 
@@ -660,46 +662,19 @@ let newsGlideCount = 0
  * @param {boolean} up True to slide up, otherwise false. 
  */
 function slide_(up){
-    const lCUpper = document.querySelector('#landingContainer > #upper')
-    const lCLLeft = document.querySelector('#landingContainer > #lower > #left')
-    const lCLCenter = document.querySelector('#landingContainer > #lower > #center')
-    const lCLRight = document.querySelector('#landingContainer > #lower > #right')
-    const newsBtn = document.querySelector('#landingContainer > #lower > #center #content')
+    const newsContainer = document.getElementById('newsContainer')
     const landingContainer = document.getElementById('landingContainer')
-    const newsContainer = document.querySelector('#landingContainer > #newsContainer')
 
     newsGlideCount++
 
     if(up){
-        lCUpper.style.top = '-200vh'
-        lCLLeft.style.top = '-200vh'
-        lCLCenter.style.top = '-200vh'
-        lCLRight.style.top = '-200vh'
-        newsBtn.style.top = '130vh'
         newsContainer.style.top = '0px'
-        //date.toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'})
-        //landingContainer.style.background = 'rgba(29, 29, 29, 0.55)'
-        landingContainer.style.background = 'rgba(0, 0, 0, 0.50)'
-        setTimeout(() => {
-            if(newsGlideCount === 1){
-                lCLCenter.style.transition = 'none'
-                newsBtn.style.transition = 'none'
-            }
-            newsGlideCount--
-        }, 2000)
+        landingContainer.setAttribute('data-news', 'active')
+        setTimeout(() => { newsGlideCount-- }, 450)
     } else {
-        setTimeout(() => {
-            newsGlideCount--
-        }, 2000)
-        landingContainer.style.background = null
-        lCLCenter.style.transition = null
-        newsBtn.style.transition = null
         newsContainer.style.top = '100%'
-        lCUpper.style.top = '0px'
-        lCLLeft.style.top = '0px'
-        lCLCenter.style.top = '0px'
-        lCLRight.style.top = '0px'
-        newsBtn.style.top = '10px'
+        landingContainer.removeAttribute('data-news')
+        setTimeout(() => { newsGlideCount-- }, 450)
     }
 }
 

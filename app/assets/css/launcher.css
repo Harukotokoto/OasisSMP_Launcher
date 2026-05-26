@@ -3479,7 +3479,7 @@ input:checked + .toggleSwitchSlider:before {
     background-color: transparent;
 }
 #launch_progress[value]::-webkit-progress-value {
-    background-color: #fff;
+    background-color: #9b27ff;
 }
 
 /* Span which displays information about the status of the launch process. */
@@ -3919,6 +3919,7 @@ input:checked + .toggleSwitchSlider:before {
     justify-content: center;
     width: 100%;
     height: calc(100% - 22px);
+    pointer-events: none;
 }
 
 /* Loading content container. */
@@ -3941,13 +3942,15 @@ input:checked + .toggleSwitchSlider:before {
 /* Stationary image for the spinner. */
 #loadCenterImage {
     position: absolute;
-    width: 277px;
-    height: auto;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    z-index: 401;
 }
 
 /* Rotating image for the spinner. */
 #loadSpinnerImage {
-    width: 280px;
+    width: 200px;
     height: auto;
     z-index: 400;
 }
@@ -3965,4 +3968,1439 @@ input:checked + .toggleSwitchSlider:before {
 /* Class which is applied when the spinner image is spinning. */
 .rotating {
     animation: rotating 10s linear infinite;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * macOS Sonoma HIG 驕ｯ・ｶ郢晢ｽｻComplete Design System                                   *
+ * Human Interface Guidelines / macOS Sonoma Dark Mode                         *
+ * Window: 980繝ｻ繝ｻ繝ｻ52  Frame: 22px  Content: 980繝ｻ繝ｻ繝ｻ30                             *
+ *                                                                             *
+ ******************************************************************************/
+
+/* 髫ｨ貂可髫ｨ貂可 Design Tokens (macOS Sonoma Dark) 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+:root {
+    --mac-bg:            #1c1c1e;
+    --mac-bg-2:          #2c2c2e;
+    --mac-bg-3:          #3a3a3c;
+    --mac-sidebar:       rgba(28,28,30,0.82);
+    --mac-toolbar:       rgba(28,28,30,0.96);
+    --mac-sep:           rgba(84,84,88,0.55);
+    --mac-sep-subtle:    rgba(255,255,255,0.06);
+    --mac-label:         rgba(255,255,255,0.88);
+    --mac-label-2:       rgba(235,235,245,0.6);
+    --mac-label-3:       rgba(235,235,245,0.3);
+    --mac-label-4:       rgba(235,235,245,0.14);
+    --mac-accent:        #9f35f5;
+    --mac-accent-dim:    rgba(159,53,245,0.18);
+    --mac-accent-hover:  #b04fff;
+    --mac-fill:          rgba(120,120,128,0.2);
+    --mac-fill-2:        rgba(120,120,128,0.14);
+    --mac-fill-3:        rgba(118,118,128,0.12);
+    --mac-sidebar-w:     196px;
+    --mac-header-h:      46px;
+    --mac-bar-h:         66px;
+    --mac-r:             10px;
+    --mac-r-lg:          14px;
+    --mac-r-sm:          6px;
+
+    /* Legacy aliases 驕ｯ・ｶ郢晢ｽｻkeep old variables pointing to new tokens */
+    --apple-bg:             var(--mac-bg);
+    --apple-surface:        var(--mac-fill-3);
+    --apple-surface-hover:  var(--mac-fill-2);
+    --apple-border:         var(--mac-sep-subtle);
+    --apple-accent:         var(--mac-accent);
+    --apple-accent-hover:   var(--mac-accent-hover);
+    --apple-text-primary:   var(--mac-label);
+    --apple-text-secondary: var(--mac-label-2);
+    --apple-text-tertiary:  var(--mac-label-3);
+    --apple-sidebar-width:  var(--mac-sidebar-w);
+    --apple-radius:         var(--mac-r);
+    --apple-radius-sm:      var(--mac-r-sm);
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Global Font Override 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+body, button, input, select, textarea {
+    font-family: -apple-system, 'SF Pro Text', 'SF Pro Display', 'Avenir Book', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Main container (jQuery .show() 驕ｶ鄙ｫ繝ｻblock; let views handle own display) 髫ｨ貂可髫ｨ貂可 */
+#main {
+    background: none !important;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Frame Bar (Windows native) 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#frameBar {
+    background: #1c1c1e !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: none !important;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Landing container 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#landingContainer {
+    position: static !important;
+    margin-top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
+    flex-direction: row !important;
+    background: none !important;
+    font-family: -apple-system, 'SF Pro Text', sans-serif;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Sidebar 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#landingSidebar {
+    width: var(--mac-sidebar-w);
+    min-width: var(--mac-sidebar-w);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 18px 14px 16px;
+    box-sizing: border-box;
+    background: var(--mac-sidebar);
+    backdrop-filter: blur(40px) saturate(1.8);
+    -webkit-backdrop-filter: blur(40px) saturate(1.8);
+    border-right: 1px solid var(--mac-sep);
+}
+
+#sidebarTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+#image_seal_container {
+    position: relative;
+    width: 68px;
+    height: 68px;
+}
+#image_seal {
+    width: 68px;
+    height: 68px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    transition: box-shadow 0.25s ease;
+    border: none !important;
+    background: none !important;
+}
+#image_seal:hover {
+    box-shadow: 0 4px 28px rgba(0,0,0,0.6);
+}
+
+#sidebarServerInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+}
+#sidebarServerName {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--mac-label);
+    letter-spacing: -0.2px;
+    text-align: center;
+}
+
+#server_status_wrapper,
+#sidebarMojangRow {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px 9px;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--mac-fill-3);
+    border-radius: var(--mac-r-sm);
+    border: 1px solid var(--mac-sep-subtle);
+}
+
+#player_count {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--mac-label);
+    font-variant-numeric: tabular-nums;
+}
+.sidebarLabel {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--mac-label-3);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+#mojang_status_icon {
+    font-size: 12px;
+    line-height: 1;
+}
+
+#mojangStatusTooltip {
+    position: absolute;
+    left: calc(var(--mac-sidebar-w) + 10px);
+    bottom: 0;
+    min-width: 180px;
+    background: rgba(44,44,46,0.97);
+    border: 1px solid var(--mac-sep);
+    border-radius: var(--mac-r);
+    padding: 10px 12px;
+    font-size: 11px;
+    color: var(--mac-label);
+    z-index: 300;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+#sidebarMojangRow:hover #mojangStatusTooltip {
+    opacity: 1;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Sidebar Bottom 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#sidebarBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+#sidebarSocials {
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}
+.sidebarSocialBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--mac-fill-3);
+    border: 1px solid var(--mac-sep-subtle);
+    cursor: pointer;
+    transition: background 0.15s ease;
+    text-decoration: none;
+}
+.sidebarSocialBtn:hover {
+    background: var(--mac-fill-2);
+}
+.sidebarSocialSVG {
+    width: 14px;
+    height: 14px;
+    fill: var(--mac-label-2);
+}
+#sidebarDivider {
+    width: 100%;
+    height: 1px;
+    background: var(--mac-sep-subtle);
+}
+.sidebarIconBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--mac-fill-3);
+    border: 1px solid var(--mac-sep-subtle);
+    cursor: pointer;
+    transition: background 0.15s ease;
+    position: relative;
+}
+.sidebarIconBtn:hover {
+    background: var(--mac-fill-2);
+}
+.sidebarIconSVG {
+    width: 15px;
+    height: 15px;
+    fill: var(--mac-label-2);
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Landing Main area 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#landingMain {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Header bar 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#landingHeader {
+    height: var(--mac-header-h);
+    min-height: var(--mac-header-h);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--mac-sep-subtle);
+    background: rgba(28,28,30,0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    z-index: 30;
+    flex-shrink: 0;
+}
+
+#user_content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    -webkit-app-region: no-drag;
+}
+#user_text {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mac-label);
+    letter-spacing: -0.1px;
+}
+#avatarContainer {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--mac-fill-2);
+    border: 1px solid var(--mac-sep-subtle);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+#avatarOverlay {
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 0;
+    transition: background 0.15s;
+}
+#avatarOverlay:hover {
+    background: rgba(0,0,0,0.25);
+}
+
+/* News toggle button */
+#newsButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--mac-fill-3);
+    border: 1px solid var(--mac-sep-subtle);
+    border-radius: 16px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    -webkit-app-region: no-drag;
+}
+#newsButton:hover {
+    background: var(--mac-fill-2);
+}
+#newsButtonSVG {
+    width: 10px;
+    height: auto;
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+#newsButtonText {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--mac-label-2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+#newsButtonAlert {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--mac-accent);
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Content spacer 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#landingContent {
+    flex: 1;
+    min-height: 0;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 News container (absolute overlay over landingMain) 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#newsContainer {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 100% !important;
+    bottom: 0 !important;
+    height: auto !important;
+    width: auto !important;
+    background: var(--mac-bg) !important;
+    z-index: 20;
+    transition: top 0.4s cubic-bezier(0.4,0,0.2,1) !important;
+    display: flex !important;
+    flex-direction: column;
+    overflow: hidden;
+}
+#newsContent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex: 1;
+    position: relative;
+    -webkit-user-select: initial;
+}
+#newsContent:before {
+    content: '';
+    background: linear-gradient(rgba(0,0,0,0.15), transparent);
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    z-index: 1;
+}
+#newsContent[scrolled]:before { opacity: 1; }
+
+#newsStatusContainer {
+    width: 260px;
+    min-width: 260px;
+    height: 100%;
+    padding: 20px 16px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-right: 1px solid var(--mac-sep-subtle);
+}
+#newsStatusContent {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+#newsTitleContainer { display: flex; }
+#newsArticleTitle {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--mac-label);
+    text-decoration: none;
+    letter-spacing: -0.2px;
+    line-height: 1.4;
+    transition: color 0.15s;
+}
+#newsArticleTitle:hover,
+#newsArticleTitle:focus { color: var(--mac-accent); }
+#newsMetaContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+#newsArticleDateWrapper,
+#newsArticleAuthorWrapper { display: flex; }
+#newsArticleDate,
+#newsArticleAuthor {
+    font-size: 11px;
+    color: var(--mac-label-3);
+}
+#newsArticleComments {
+    font-size: 11px;
+    color: var(--mac-accent);
+    text-decoration: none;
+    transition: opacity 0.15s;
+}
+#newsArticleComments:hover { opacity: 0.75; }
+
+#newsNavigationContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+#newsNavigateLeft,
+#newsNavigateRight {
+    background: var(--mac-fill-3);
+    border: 1px solid var(--mac-sep-subtle);
+    border-radius: var(--mac-r-sm);
+    width: 26px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+#newsNavigateLeft:hover,
+#newsNavigateRight:hover { background: var(--mac-fill-2); }
+#newsNavigationLeftSVG,
+#newsNavigationRightSVG { width: 10px; height: auto; }
+#newsNavigationStatus {
+    font-size: 11px;
+    color: var(--mac-label-3);
+    font-variant-numeric: tabular-nums;
+}
+#newsArticleContainer {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+}
+#newsArticleContent {
+    flex: 1;
+    overflow: hidden;
+}
+#newsArticleContentScrollable {
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px 24px;
+    font-size: 13px;
+    color: var(--mac-label-2);
+    line-height: 1.65;
+    box-sizing: border-box;
+}
+#newsArticleContentScrollable img,
+#newsArticleContentScrollable iframe { max-width: 100%; border-radius: var(--mac-r-sm); }
+#newsArticleContentScrollable a { color: var(--mac-accent); text-decoration: none; }
+#newsArticleContentScrollable a:hover { opacity: 0.8; }
+#newsArticleContentScrollable::-webkit-scrollbar { width: 4px; }
+#newsArticleContentScrollable::-webkit-scrollbar-track { background: transparent; }
+#newsArticleContentScrollable::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+}
+#newsErrorContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.newsErrorContent {
+    font-size: 13px;
+    color: var(--mac-label-3);
+}
+#newsErrorRetry {
+    margin-top: 8px;
+    background: var(--mac-fill-2);
+    border: 1px solid var(--mac-sep-subtle);
+    border-radius: var(--mac-r-sm);
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--mac-label-2);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+#newsErrorRetry:hover { background: var(--mac-fill); }
+
+/* 髫ｨ貂可髫ｨ貂可 Launch bar 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#landingLaunchBar {
+    min-height: var(--mac-bar-h);
+    padding: 14px 20px;
+    border-top: 1px solid var(--mac-sep-subtle);
+    background: rgba(28,28,30,0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-sizing: border-box;
+    position: relative;
+    z-index: 30;
+    flex-shrink: 0;
+}
+#launch_content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+#launch_button {
+    background: var(--mac-accent) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 8px 24px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.1px !important;
+    cursor: pointer;
+    transition: opacity 0.15s ease, transform 0.1s ease !important;
+    box-shadow: none !important;
+    outline: none !important;
+    text-shadow: none !important;
+}
+#launch_button:hover,
+#launch_button:focus {
+    opacity: 0.88 !important;
+    transform: none !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+#launch_button:active {
+    opacity: 0.7 !important;
+    transform: scale(0.98) !important;
+    color: #fff !important;
+    text-shadow: none !important;
+}
+#launch_button:disabled {
+    background: var(--mac-fill-2) !important;
+    color: var(--mac-label-3) !important;
+    box-shadow: none !important;
+    cursor: default;
+    pointer-events: none;
+    transform: none !important;
+    opacity: 1 !important;
+}
+
+#server_selection_button {
+    background: var(--mac-fill-3);
+    border: 1px solid var(--mac-sep-subtle);
+    border-radius: 8px;
+    padding: 7px 14px;
+    font-size: 12px;
+    color: var(--mac-label-2);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+#server_selection_button:hover {
+    background: var(--mac-fill-2);
+    color: var(--mac-label);
+}
+
+#launch_details {
+    margin-top: 10px;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.bot_divider { display: none; }
+#launch_details_left {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    min-width: 42px;
+}
+#launch_progress_label {
+    font-size: 11px;
+    color: var(--mac-label-3);
+    font-variant-numeric: tabular-nums;
+}
+#launch_details_right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+#launch_progress[value] {
+    width: 100%;
+    height: 2px;
+    -webkit-appearance: none;
+    border-radius: 1px;
+}
+#launch_progress[value]::-webkit-progress-bar {
+    background: var(--mac-fill-2);
+    border-radius: 1px;
+}
+#launch_progress[value]::-webkit-progress-value {
+    background: var(--mac-accent);
+    border-radius: 1px;
+}
+#launch_details_text {
+    font-size: 11px;
+    color: var(--mac-label-3);
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Tooltips 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#updateAvailableTooltip {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(44,44,46,0.97);
+    border: 1px solid var(--mac-sep);
+    border-radius: var(--mac-r-sm);
+    padding: 5px 10px;
+    font-size: 11px;
+    color: var(--mac-label);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    z-index: 300;
+}
+#image_seal_container:hover #updateAvailableTooltip { opacity: 1; }
+
+#settingsTooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(44,44,46,0.97);
+    border: 1px solid var(--mac-sep);
+    border-radius: var(--mac-r-sm);
+    padding: 5px 10px;
+    font-size: 11px;
+    color: var(--mac-label);
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+    z-index: 300;
+}
+.sidebarIconBtn:hover #settingsTooltip { opacity: 1; }
+
+/* 髫ｨ貂可髫ｨ貂可 Welcome screen 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#welcomeContainer {
+    position: relative !important;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--mac-bg) !important;
+}
+#welcomeContent {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-align: center !important;
+    padding: 40px 36px !important;
+    background: rgba(44,44,46,0.7) !important;
+    border: 1px solid var(--mac-sep) !important;
+    border-radius: var(--mac-r-lg) !important;
+    width: 320px !important;
+    backdrop-filter: blur(40px) !important;
+    -webkit-backdrop-filter: blur(40px) !important;
+    top: auto !important;
+    position: relative !important;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4) !important;
+}
+#welcomeImageSeal {
+    width: 72px !important;
+    height: 72px !important;
+    border-radius: 18px !important;
+    object-fit: cover !important;
+    box-shadow: 0 2px 18px rgba(0,0,0,0.45) !important;
+    border: none !important;
+    background: none !important;
+    margin: 0 0 4px !important;
+}
+#welcomeHeader {
+    font-size: 19px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.4px !important;
+    color: var(--mac-label) !important;
+    font-family: -apple-system, 'SF Pro Display', sans-serif !important;
+    text-shadow: none !important;
+    margin: 0 !important;
+}
+#welcomeDescription {
+    font-size: 13px !important;
+    color: var(--mac-label-2) !important;
+    line-height: 1.55 !important;
+    text-shadow: none !important;
+    text-align: center !important;
+}
+#welcomeDescCTA {
+    font-size: 12px !important;
+    color: var(--mac-label-3) !important;
+    text-shadow: none !important;
+    text-align: center !important;
+}
+#welcomeButton {
+    margin: 6px 0 0 !important;
+    background: var(--mac-accent) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 9px 0 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: opacity 0.15s !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    letter-spacing: 0 !important;
+    position: static !important;
+    right: auto !important;
+    text-shadow: none !important;
+}
+#welcomeButton:hover,
+#welcomeButton:focus {
+    opacity: 0.85 !important;
+    text-shadow: none !important;
+    transform: none !important;
+}
+#welcomeButton:disabled {
+    opacity: 0.4 !important;
+    pointer-events: none !important;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Login Options screen 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#loginOptionsContainer {
+    position: relative !important;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--mac-bg) !important;
+}
+#loginOptionsContent {
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+.loginOptionsMainContent {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    padding: 40px 36px !important;
+    background: rgba(44,44,46,0.7) !important;
+    border: 1px solid var(--mac-sep) !important;
+    border-radius: var(--mac-r-lg) !important;
+    width: 300px !important;
+    backdrop-filter: blur(40px) !important;
+    -webkit-backdrop-filter: blur(40px) !important;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.4) !important;
+}
+.loginOptionsMainContent h2 {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.3px !important;
+    color: var(--mac-label) !important;
+    margin: 0 !important;
+    font-family: -apple-system, 'SF Pro Display', sans-serif !important;
+}
+.loginOptionsSubtitle {
+    font-size: 12px !important;
+    color: var(--mac-label-3) !important;
+    margin: -6px 0 2px !important;
+}
+.loginOptionsLogo {
+    width: 64px !important;
+    height: 64px !important;
+    border-radius: 16px !important;
+    object-fit: cover !important;
+    box-shadow: 0 2px 18px rgba(0,0,0,0.45) !important;
+}
+.loginOptionActions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+}
+.loginOptionButtonContainer { width: 100% !important; }
+.loginOptionButton {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 9px !important;
+    width: 100% !important;
+    padding: 9px 18px !important;
+    background: var(--mac-accent) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: opacity 0.15s !important;
+    box-shadow: none !important;
+    letter-spacing: 0 !important;
+}
+.loginOptionButton:hover,
+.loginOptionButton:focus {
+    opacity: 0.85 !important;
+    transform: none !important;
+}
+.loginOptionButtonSecondary {
+    background: var(--mac-fill-2) !important;
+    border: 1px solid var(--mac-sep-subtle) !important;
+    box-shadow: none !important;
+    color: var(--mac-label) !important;
+}
+.loginOptionButtonSecondary:hover {
+    background: var(--mac-fill) !important;
+    opacity: 1 !important;
+}
+#loginOptionCancelContainer { width: 100% !important; }
+#loginOptionCancelButton {
+    width: 100% !important;
+    padding: 8px !important;
+    background: none !important;
+    border: none !important;
+    color: var(--mac-label-3) !important;
+    font-size: 12px !important;
+    cursor: pointer !important;
+    transition: color 0.15s !important;
+    border-radius: var(--mac-r-sm) !important;
+}
+#loginOptionCancelButton:hover { color: var(--mac-label) !important; }
+
+/* 髫ｨ貂可髫ｨ貂可 Overlay / Modal sheet 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#overlayContainer {
+    position: absolute;
+    inset: 0;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.55) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+#overlayContent,
+#serverSelectContent,
+#accountSelectContent {
+    background: rgba(44,44,46,0.96);
+    border: 1px solid var(--mac-sep);
+    border-radius: var(--mac-r-lg);
+    padding: 28px 28px 22px;
+    max-width: 420px;
+    width: 90%;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+}
+#overlayTitle,
+#serverSelectHeader,
+#accountSelectHeader {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--mac-label);
+    letter-spacing: -0.2px;
+    display: block;
+    margin-bottom: 10px;
+}
+#overlayDesc {
+    font-size: 13px;
+    color: var(--mac-label-2);
+    line-height: 1.55;
+    display: block;
+    margin-bottom: 18px;
+}
+#overlayActionContainer,
+#serverSelectActions,
+#accountSelectActions {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+    margin-top: 16px;
+}
+#overlayAcknowledge,
+.overlayKeybindEnter,
+#serverSelectConfirm,
+#accountSelectConfirm {
+    background: var(--mac-accent) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 7px !important;
+    padding: 7px 16px !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: opacity 0.15s !important;
+}
+#overlayAcknowledge:hover,
+.overlayKeybindEnter:hover { opacity: 0.85 !important; }
+#overlayDismiss,
+.overlayKeybindEsc,
+#serverSelectCancel,
+#accountSelectCancel {
+    background: var(--mac-fill-2) !important;
+    border: 1px solid var(--mac-sep-subtle) !important;
+    border-radius: 7px !important;
+    padding: 7px 14px !important;
+    font-size: 13px !important;
+    color: var(--mac-label) !important;
+    cursor: pointer !important;
+    transition: background 0.15s !important;
+}
+#overlayDismiss:hover,
+.overlayKeybindEsc:hover { background: var(--mac-fill) !important; }
+
+#serverSelectList,
+#accountSelectList {
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: var(--mac-r-sm);
+    border: 1px solid var(--mac-sep-subtle);
+    background: var(--mac-fill-3);
+    margin-top: 6px;
+}
+#serverSelectList::-webkit-scrollbar,
+#accountSelectList::-webkit-scrollbar { width: 4px; }
+#serverSelectList::-webkit-scrollbar-track,
+#accountSelectList::-webkit-scrollbar-track { background: transparent; }
+#serverSelectList::-webkit-scrollbar-thumb,
+#accountSelectList::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Waiting screen 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#waitingContainer {
+    position: relative !important;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: var(--mac-bg) !important;
+}
+#waitingContent {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 16px !important;
+}
+.waitingSpinner {
+    display: none !important;
+}
+.waitingSpinner:before,
+.waitingSpinner:after {
+    display: none !important;
+    animation: none !important;
+    content: none !important;
+}
+#waitingTextContainer h2 {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: var(--mac-label-2) !important;
+    letter-spacing: -0.1px !important;
+    font-family: -apple-system, 'SF Pro Text', sans-serif !important;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Global scrollbars 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.15);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.25); }
+
+/* 髫ｨ貂可髫ｨ貂可 Neutralise remaining old #upper / #lower references 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#landingContainer > #upper,
+#landingContainer > #lower { display: none !important; }
+
+/* 髫ｨ貂可髫ｨ貂可 News active state 髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可髫ｨ貂可 */
+#landingContainer[data-news='active'] #landingSidebar {
+    opacity: 0.35;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+#landingSidebar { transition: opacity 0.4s ease; }
+    --apple-surface: rgba(255, 255, 255, 0.05);
+    --apple-surface-hover: rgba(255, 255, 255, 0.09);
+    --apple-border: rgba(255, 255, 255, 0.08);
+    --apple-accent: #9b27ff;
+    --apple-accent-hover: #b44fff;
+    --apple-text-primary: rgba(255, 255, 255, 0.95);
+    --apple-text-secondary: rgba(255, 255, 255, 0.45);
+    --apple-text-tertiary: rgba(255, 255, 255, 0.25);
+    --apple-sidebar-width: 220px;
+    --apple-radius: 12px;
+    --apple-radius-sm: 8px;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Full-screen container 髫ｨ貂可髫ｨ貂可 */
+#landingContainer {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex !important;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100% - 22px);
+    margin-top: 22px;
+    font-family: -apple-system, 'SF Pro Display', 'Avenir Book', sans-serif;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Sidebar 髫ｨ貂可髫ｨ貂可 */
+#landingSidebar {
+    width: var(--apple-sidebar-width);
+    min-width: var(--apple-sidebar-width);
+    height: 100%;
+    background: rgba(255,255,255,0.03);
+    border-right: 1px solid var(--apple-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 16px;
+    box-sizing: border-box;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+#sidebarTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+#image_seal_container {
+    position: relative;
+    width: 72px;
+    height: 72px;
+}
+
+#image_seal {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    object-fit: cover;
+    box-shadow: 0 4px 24px rgba(155, 39, 255, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+#image_seal:hover {
+    box-shadow: 0 4px 32px rgba(155, 39, 255, 0.5);
+}
+
+#sidebarServerInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#sidebarServerName {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--apple-text-primary);
+    letter-spacing: -0.3px;
+    text-align: center;
+}
+
+#sidebarStatusRow,
+#sidebarMojangRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: var(--apple-surface);
+    border-radius: var(--apple-radius-sm);
+    border: 1px solid var(--apple-border);
+}
+
+#player_count {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--apple-text-primary);
+}
+
+.sidebarLabel {
+    font-size: 11px;
+    color: var(--apple-text-secondary);
+}
+
+#mojang_status_icon {
+    font-size: 14px;
+    line-height: 1;
+}
+
+/* Mojang status tooltip 驕ｯ・ｶ郢晢ｽｻkeep original positioning logic */
+#mojangStatusTooltip {
+    left: calc(var(--apple-sidebar-width) + 8px);
+    top: auto;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Sidebar Bottom 髫ｨ貂可髫ｨ貂可 */
+#sidebarBottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#sidebarSocials {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.sidebarSocialBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--apple-surface);
+    border: 1px solid var(--apple-border);
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.15s ease;
+    text-decoration: none;
+}
+
+.sidebarSocialBtn:hover {
+    background: var(--apple-surface-hover);
+    transform: scale(1.08);
+}
+
+.sidebarSocialSVG {
+    width: 16px;
+    height: 16px;
+    fill: rgba(255,255,255,0.6);
+}
+
+#sidebarDivider {
+    width: 100%;
+    height: 1px;
+    background: var(--apple-border);
+}
+
+.sidebarIconBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--apple-surface);
+    border: 1px solid var(--apple-border);
+    cursor: pointer;
+    transition: background 0.2s ease;
+    position: relative;
+}
+
+.sidebarIconBtn:hover {
+    background: var(--apple-surface-hover);
+}
+
+.sidebarIconSVG {
+    width: 16px;
+    height: 16px;
+    fill: rgba(255,255,255,0.7);
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Main area 髫ｨ貂可髫ｨ貂可 */
+#landingMain {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Header 髫ｨ貂可髫ｨ貂可 */
+#landingHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--apple-border);
+    background: rgba(255,255,255,0.02);
+}
+
+#user_content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+#user_text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--apple-text-primary);
+    letter-spacing: -0.2px;
+}
+
+#avatarContainer {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--apple-surface);
+    border: 1px solid var(--apple-border);
+    position: relative;
+}
+
+#avatarOverlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    border-radius: 50%;
+    font-size: 0;
+}
+
+#avatarOverlay:hover {
+    background: rgba(0,0,0,0.3);
+}
+
+/* News button in header */
+#newsButton {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--apple-surface);
+    border: 1px solid var(--apple-border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#newsButton:hover {
+    background: var(--apple-surface-hover);
+}
+
+#newsButtonSVG {
+    width: 12px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+#newsButtonText {
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+    font-weight: 500;
+}
+
+#newsButtonAlert {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--apple-accent);
+}
+
+/* 髫ｨ貂可髫ｨ貂可 News container 髫ｨ貂可髫ｨ貂可 */
+#newsContainer {
+    flex: 1;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+}
+
+/* 髫ｨ貂可髫ｨ貂可 Launch bar 髫ｨ貂可髫ｨ貂可 */
+#landingLaunchBar {
+    padding: 16px 24px;
+    border-top: 1px solid var(--apple-border);
+    background: rgba(255,255,255,0.02);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+#launch_content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+#launch_button {
+    background: var(--apple-accent);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 9px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 16px rgba(155, 39, 255, 0.35);
+    outline: none;
+    text-shadow: none;
+}
+
+#launch_button:hover,
+#launch_button:focus {
+    background: var(--apple-accent-hover);
+    box-shadow: 0 4px 24px rgba(155, 39, 255, 0.5);
+    transform: translateY(-1px);
+    text-shadow: none;
+}
+
+#launch_button:active {
+    background: #7a1fcc;
+    transform: translateY(0);
+    color: rgba(255,255,255,0.85);
+    text-shadow: none;
+}
+
+#launch_button:disabled {
+    background: rgba(155, 39, 255, 0.3);
+    box-shadow: none;
+    cursor: default;
+    pointer-events: none;
+    transform: none;
+}
+
+#server_selection_button {
+    background: none;
+    border: 1px solid var(--apple-border);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 12px;
+    color: var(--apple-text-secondary);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+#server_selection_button:hover {
+    border-color: rgba(255,255,255,0.25);
+    color: var(--apple-text-primary);
+}
+
+#launch_details {
+    margin-top: 10px;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+#launch_details_left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 48px;
+}
+
+#launch_progress_label {
+    font-size: 11px;
+    color: var(--apple-text-secondary);
+    font-variant-numeric: tabular-nums;
+}
+
+#launch_details_right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+#launch_progress[value] {
+    width: 100%;
+    height: 3px;
+    -webkit-appearance: none;
+    border-radius: 2px;
+}
+
+#launch_progress[value]::-webkit-progress-bar {
+    background-color: var(--apple-border);
+    border-radius: 2px;
+}
+
+#launch_progress[value]::-webkit-progress-value {
+    background-color: var(--apple-accent);
+    border-radius: 2px;
+}
+
+#launch_details_text {
+    font-size: 11px;
+    color: var(--apple-text-secondary);
 }

@@ -14,14 +14,20 @@ exports.initRPC = function(genSettings, servSettings, initialDetails = Lang.quer
     client = new Client({ transport: 'ipc' })
 
     activity = {
-        details: initialDetails,
-        state: Lang.queryJS('discord.state', {shortId: servSettings.shortId}),
-        largeImageKey: servSettings.largeImageKey,
+        details: 'Oasis SMP',
+        state: 'Mod導入で新しい世界へ！',
+        largeImageKey: 'icon',
         largeImageText: servSettings.largeImageText,
         smallImageKey: genSettings.smallImageKey,
         smallImageText: genSettings.smallImageText,
         startTimestamp: new Date().getTime(),
-        instance: false
+        instance: false,
+        buttons: [
+            {
+                label: '参加する',
+                url: 'https://go.hrkt.org/mc/discord'
+            }
+        ]
     }
 
     client.on('ready', () => {
@@ -39,7 +45,6 @@ exports.initRPC = function(genSettings, servSettings, initialDetails = Lang.quer
 }
 
 exports.updateDetails = function(details){
-    activity.details = details
     client.setActivity(activity)
 }
 
