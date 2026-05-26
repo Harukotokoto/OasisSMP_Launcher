@@ -5,9 +5,9 @@
   "description": "Modded Minecraft Launcher",
   "author": "Harukoto",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/Harukoto/HarukotoLauncher",
+  "homepage": "https://github.com/Harukotokoto/OasisSMP_Launcher",
   "bugs": {
-    "url": "https://github.com/Harukoto/HarukotoLauncher/issues"
+    "url": "https://github.com/Harukotokoto/OasisSMP_Launcher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -47,6 +47,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Harukoto/HarukotoLauncher.git"
+    "url": "git+https://github.com/Harukotokoto/OasisSMP_Launcher.git"
   }
 }
