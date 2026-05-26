@@ -97,15 +97,12 @@ jobs:
           path: dist-all
 
       - name: Create GitHub Release
-        uses: softprops/action-gh-release@v2
+        uses: ncipollo/release-action@v1
         with:
-          files: |
-            dist-all/windows-dist/*
-            dist-all/mac-dist/*
-            dist-all/linux-dist/*
-          generate_release_notes: true
+          artifacts: "dist-all/windows-dist/*,dist-all/mac-dist/*,dist-all/linux-dist/*"
+          generateReleaseNotes: true
           draft: false
-          fail_on_unmatched_files: false
+          allowUpdates: true
+          replacesArtifacts: true
           prerelease: ${{ contains(github.ref_name, 'beta') || contains(github.ref_name, 'alpha') || contains(github.ref_name, 'pre') }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
